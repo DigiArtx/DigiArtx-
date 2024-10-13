@@ -18,8 +18,8 @@ export const InputColorState = (
   active?: boolean,
   error?: boolean
 ) => {
-  let borderColor = active ? colors.primary : colors.black_4;
-  let backgroundColor = active ? colors.white : colors.white;
+  let borderColor = '#253341';
+  let backgroundColor = '#253341';
   borderColor = error ? colors.danger : borderColor;
   backgroundColor = error ? colors.white : backgroundColor;
 
