@@ -1,6 +1,7 @@
 import { Flex } from "native-base";
 import { useRouter } from "expo-router";
 import { Spacer } from "@components/views";
+import Unfill from "@assets/svg/unfill.svg";
 import { OnboardingCard } from "./components";
 import Icon from "@assets/onboarding/onboarding2.svg";
 
@@ -17,7 +18,8 @@ export default function DiscoverCryptoArt() {
       <Icon />
       <Spacer height={300} />
       <OnboardingCard
-        onPress={() => router.push("/_sitemap")}
+        icons={[<Unfill />, <Unfill />, <Unfill />]}
+        onPress={() => router.push("/wallet")}
         heading="Discovering the  world of crypto art"
       />
     </Flex>

@@ -1,14 +1,15 @@
-import Fill from "@assets/svg/fill.svg";
-import Unfill from "@assets/svg/unfill.svg";
+import { ReactNode } from "react";
 import { PrimaryButton } from "@components/button";
-import { Heading, Stack, Text } from "native-base";
+import { Heading, Stack, Text, Flex } from "native-base";
 
 export interface OnboardingCardProps {
+  icons: ReactNode[]; 
   heading: string;
   onPress: () => void;
 }
 
 export const OnboardingCard: React.FC<OnboardingCardProps> = ({
+  icons,
   heading,
   onPress,
 }) => {
@@ -19,7 +20,7 @@ export const OnboardingCard: React.FC<OnboardingCardProps> = ({
       backgroundColor="#253341"
       borderTopLeftRadius="30px"
       borderTopRightRadius="30px"
-      padding="42px 16px 42px 16px"
+      padding="42px 16px"
       space={10}
       height="367px"
       width="100%"
@@ -45,10 +46,15 @@ export const OnboardingCard: React.FC<OnboardingCardProps> = ({
             Buy and sell digital items
           </Text>
         </Stack>
-        <Stack alignItems="center" direction="row" alignSelf="center" space={2}>
-          <Unfill />
-          <Fill />
-          <Fill />
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent="center"
+          space={2}
+        >
+          {icons.map((icon, index) => (
+            <Flex key={index}>{icon}</Flex>
+          ))}
         </Stack>
       </Stack>
       <PrimaryButton

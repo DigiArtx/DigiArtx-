@@ -7,7 +7,7 @@ export default function Index() {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      router.push("/auth" as any);
+      router.push("/onboarding");
     }, 3000);
 
     return () => clearTimeout(timeout);

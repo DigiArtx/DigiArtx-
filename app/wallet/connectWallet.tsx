@@ -7,11 +7,13 @@ import { PrimaryButton } from "@components/button";
 import { ConnectWalletButton } from "./components";
 import Connect from "@assets/onboarding/connect.svg";
 import Trust_Wallet from "@assets/svg/Trust_Wallet.svg";
+import { useNavigation } from "@react-navigation/native";
 import { Heading, IconButton, Stack, Text } from "native-base";
 import { RFSpacingSize, Spacer, ViewContainer } from "@components/views";
 
 export default function ConnectWallet() {
   const router = useRouter();
+  const navigate = useNavigation();
   return (
     <ViewContainer
       flex={1}
@@ -25,7 +27,7 @@ export default function ConnectWallet() {
         justifyContent="space-between"
         width="100%"
       >
-        <IconButton icon={<BackIcon />} />
+        <IconButton icon={<BackIcon />} onPress={() => navigate.goBack()} />
         <Logo />
       </Stack>
       <Spacer height={RFSpacingSize.i40} />
@@ -78,7 +80,7 @@ export default function ConnectWallet() {
         text="Continue"
         borderColor="#1D9BF0"
         backgroundColor="#1D9BF0"
-        onPress={() => router.push("/_sitemap")}
+        onPress={() => router.push("/wallet/setProfile")}
       />
     </ViewContainer>
   );

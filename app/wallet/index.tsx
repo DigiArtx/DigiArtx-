@@ -7,6 +7,7 @@ import { RFSpacingSize, Spacer, ViewContainer } from "@components/views";
 
 export default function Index() {
   const router = useRouter();
+  
   return (
     <ViewContainer
       flex={1}
@@ -57,7 +58,7 @@ export default function Index() {
           backgroundColor="#1D9BF0"
           borderColor="#1D9BF0"
           width="80%"
-          onPress={() => router.push("/_sitemap")}
+          onPress={() => router.push("/wallet/connectWallet")}
         />
         <Flex
           borderWidth="1px"

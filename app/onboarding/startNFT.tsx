@@ -1,6 +1,8 @@
 import { Flex } from "native-base";
 import { useRouter } from "expo-router";
+import Fill from "@assets/svg/fill.svg";
 import { Spacer } from "@components/views";
+import Unfill from "@assets/svg/unfill.svg";
 import { OnboardingCard } from "./components";
 import Icon from "@assets/onboarding/onboarding1.svg";
 
@@ -17,8 +19,9 @@ export default function StartNFT() {
       <Icon />
       <Spacer height={300} />
       <OnboardingCard
-        onPress={() => router.push("/_sitemap")}
         heading="Start your own NFT gallery now"
+        icons={[<Unfill />, <Unfill />, <Fill />]}
+        onPress={() => router.push("/onboarding/discoverCryptoArt")}
       />
     </Flex>
   );

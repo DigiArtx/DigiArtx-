@@ -3,11 +3,13 @@ import Avater from "@assets/svg/avater.svg";
 import BackIcon from "@assets/svg/back.svg";
 import { PrimaryInput } from "@components/input";
 import { PrimaryButton } from "@components/button";
-import { IconButton, Stack, Text, TextArea } from "native-base";
+import { IconButton, Stack, Text } from "native-base";
+import { useNavigation } from "@react-navigation/native";
 import { RFSpacingSize, Spacer, ViewContainer } from "@components/views";
 
 export default function SetProfile() {
   const router = useRouter();
+  const navigate = useNavigation();
   return (
     <ViewContainer flex={1} justifyContent="center" backgroundColor="#1C212B">
       <Stack
@@ -16,7 +18,7 @@ export default function SetProfile() {
         justifyContent="space-between"
         width="100%"
       >
-        <IconButton icon={<BackIcon />} />
+        <IconButton icon={<BackIcon />} onPress={() => navigate.goBack()} />
         <Text
           fontFamily="Gilroy-Bold"
           fontSize="24px"
@@ -75,7 +77,7 @@ export default function SetProfile() {
         text="Submit"
         borderColor="#1D9BF0"
         backgroundColor="#1D9BF0"
-        onPress={() => router.push("/_sitemap")}
+        onPress={() => router.push("/wallet/welcome")}
       />
     </ViewContainer>
   );
