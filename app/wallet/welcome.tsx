@@ -1,8 +1,20 @@
+import { useEffect } from "react";
+import { useRouter } from "expo-router";
 import { Heading, Text } from "native-base";
 import WelcomeArt from "@assets/onboarding/welcome.svg";
 import { RFSpacingSize, Spacer, ViewContainer } from "@components/views";
 
 export default function Welcome() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      router.replace("/(tabs)/home");
+    }, 3000);
+
+    return () => clearTimeout(timeout);
+  }, [router]);
+
   return (
     <ViewContainer
       flex={1}
